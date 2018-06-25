@@ -49,7 +49,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-4">User Name<span class="validateRq">*</span></label>
 											<div class="col-md-8">
-												{!! Form::text('',session('logged_session_data.user_name'), $attributes = array('class'=>'form-control user_name','id'=>'user_name','readonly'=>'readonly')) !!}
+												{!! Form::text('',session('logged_session_data.email'), $attributes = array('class'=>'form-control user_name','id'=>'email','readonly'=>'readonly')) !!}
 											</div>
 										</div>
 									</div>

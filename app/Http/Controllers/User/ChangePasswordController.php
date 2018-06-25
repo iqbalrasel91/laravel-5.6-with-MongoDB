@@ -20,7 +20,7 @@ class ChangePasswordController extends Controller
 
     public function index()
     {
-        return view('admin.admin_user.changePassword');
+        return view('admin.user.changePassword');
     }
 
 
@@ -28,7 +28,7 @@ class ChangePasswordController extends Controller
     {
         $input['password'] = Hash::make($request['password']);
         if(Auth::attempt(['id'=>Auth::user()->id,'password'=>$request->oldPassword])){
-               User::where('id', Auth::user()->id)->update($input);
+               User::where('_id', Auth::user()->id)->update($input);
               return redirect()->back()->with('success', 'Password successfully updated.');
         }else{
             return redirect()->back()->with('error', 'Old Password does not match.');
